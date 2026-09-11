@@ -1,6 +1,6 @@
 # FRAME
 
-FRAME is a methodology for structured decision-making in software development.
+AI agents can write code quickly, but getting them to understand the problem first is harder. FRAME is an engineering methodology that brings structure to that process.
 
 Software engineering has always relied on more than writing code. Before implementation begins, engineers need to understand the problem, examine the existing system, explore viable approaches, evaluate trade-offs, and decide how the solution should be built.
 
