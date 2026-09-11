@@ -1,0 +1,12 @@
+---
+description: Routes software-engineering work through the FRAME methodology
+alwaysApply: true
+---
+
+FRAME applies to requests to implement, change, extend, debug, or refactor code and systems. When a request combines explanation with a change, apply FRAME to the change.
+
+For those tasks, use the `frame` skill and follow it through completion.
+
+FRAME does not apply to purely informational questions, code explanations, or read-only search and inspection. Do not mention FRAME when it does not apply.
+
+Do the work each stage requires; do not use stage names as a substitute for it.

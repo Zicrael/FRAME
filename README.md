@@ -42,6 +42,20 @@ FRAME consists of five stages, with each letter representing a distinct part of 
 4. **Materialize** — Turn the strategy into a working implementation.
 5. **Evaluate** — Validate the result.
 
+## Cursor Plugin
+
+FRAME also includes a Cursor plugin. It uses an always-applied rule to identify relevant engineering work and a skill to carry out the workflow.
+
+### Installation
+
+FRAME is coming soon to the Cursor Marketplace.
+
+### Usage
+
+FRAME applies automatically to requests that implement or change code and systems. It remains inactive for informational questions and read-only work.
+
+To invoke it explicitly, use `/frame`. Press `Option+Enter` on macOS or `Alt+Enter` on Windows to keep it active as a Custom Mode for the session.
+
 ## Documentation
 
 - [Principles](docs/principles.md)
