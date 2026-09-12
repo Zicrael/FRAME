@@ -1,10 +1,11 @@
 {
   "name": "frame",
   "displayName": "FRAME",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Applies FRAME to software-engineering work: understand the problem and existing system, choose an approach, implement it, and validate the result.",
   "author": {
-    "name": "Yaroslav Kikot"
+    "name": "Yaroslav Kikot",
+    "email": "13ccdd@gmail.com"
   },
   "homepage": "https://github.com/Zicrael/FRAME",
   "repository": "https://github.com/Zicrael/FRAME",
