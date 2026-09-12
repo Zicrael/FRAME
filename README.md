@@ -42,22 +42,29 @@ Clear, low-risk tasks take the direct path: **Foundation → Materialize → Eva
 
 ## Early results
 
-In two exploratory architecture and audit comparisons using Grok 4.6, runs with FRAME used **44% fewer reported tokens overall**. The outputs showed a smaller implementation scope and comparable audit findings.
+Early testing with Grok 4.6 showed FRAME using around **40% fewer reported tokens**, with a smaller implementation scope and comparable audit findings. These are initial observations from two architecture and audit comparisons, not a typical or guaranteed saving.
 
 | Test | Without FRAME | With FRAME |
 | --- | ---: | ---: |
 | Action request | 933.8K | 497.1K |
 | Research request | 692.1K | 413.7K |
 
-These are early observations, not a formal benchmark. They are still the reason to try FRAME: on the action request it used about half the tokens, edited two files instead of three, and produced a stronger result.
+On the action request, the FRAME run also edited two files instead of three and produced a stronger result.
 
 ## Cursor Plugin
 
-Install FRAME in Cursor and use it on the next real change. The plugin detects implementation work, runs the methodology, and stays out of questions and read-only inspection.
+Install FRAME in Cursor and use it on the next real change. The plugin includes:
+
+- An **always-applied rule** that detects implementation, change, debug, and refactor work and loads the FRAME skill. It stays out of informational questions and read-only inspection. After install the rule is set to Always; you can switch it to Agent Decides or Manual in **Customize**.
+- The `/frame` skill, which runs the methodology.
+
+FRAME is markdown only. It does not open network connections, collect telemetry, or require API keys.
 
 ### Installation
 
-FRAME will be listed on [Cursor Directory](https://cursor.directory). Until that listing is live, install it locally:
+**Cursor Directory.** Search for **FRAME** at [cursor.directory](https://cursor.directory) and install it from **Customize** (project or user scope).
+
+**Local install:**
 
 1. Clone this repository.
 2. Copy the project folder to Cursor's local plugins directory as `frame`. The copy must include `.cursor-plugin/plugin.json`.
@@ -81,16 +88,19 @@ Copy-Item -Recurse -Force FRAME "$env:USERPROFILE\.cursor\plugins\local\frame"
 
 Copy the files. Do not symlink the repo into `plugins/local`: Cursor currently ignores those links.
 
-When FRAME appears on Cursor Directory, search for **FRAME** at [cursor.directory](https://cursor.directory) and install it from **Customize**.
-
 ### Usage
 
-Ask the agent to implement or change something. FRAME applies on its own.
+Ask the agent to implement or change something. With the rule set to Always, FRAME applies on its own.
 
 - Explicit: `/frame`
 - Keep it on for the session: run `/frame` with `Option+Enter` on macOS or `Alt+Enter` on Windows to use it as a Custom Mode.
+
+### Support
+
+Open a [GitHub Issue](https://github.com/Zicrael/FRAME/issues) for bugs, questions, or listing problems.
 
 ## Documentation
 
 - [Principles](docs/principles.md)
 - [Workflow](docs/workflow.md)
+- [Changelog](CHANGELOG.md)
