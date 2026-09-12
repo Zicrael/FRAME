@@ -62,7 +62,9 @@ FRAME is markdown only. It does not open network connections, collect telemetry,
 
 ### Installation
 
-**Cursor Directory.** Search for **FRAME** at [cursor.directory](https://cursor.directory) and install it from **Customize** (project or user scope).
+**Cursor Directory:**
+
+Open [FRAME on Cursor Directory](https://cursor.directory/plugins/frame) and click **Add to Cursor** button.
 
 **Local install:**
 
