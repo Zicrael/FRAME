@@ -30,7 +30,9 @@ Do this before touching code, on every task.
 4. Find the other places the same value, behaviour, or decision is expressed. Duplicated constants, parallel implementations, and published contracts are what make a change larger than it looks.
 5. Collect the constraints that already exist: conventions in neighbouring code, interfaces that must keep working, tests that encode current behaviour.
 
-Ask the user only when the objective is genuinely ambiguous and the ambiguity changes the implementation. Do not ask for anything the repository can answer.
+Treat every explicit user constraint as an acceptance criterion. If constraints conflict, explain the conflict and ask which one to relax. Do not invent unsupported compatibility.
+
+Resolve factual questions from available evidence. Ask the user when ambiguity changes the implementation or a conflict requires their decision.
 
 If the change as requested would not solve the problem behind it, say so before implementing rather than afterwards.
 
@@ -39,7 +41,7 @@ If the change as requested would not solve the problem behind it, say so before 
 Take the direct path only when all of these hold:
 
 - the expected outcome is unambiguous;
-- one implementation is apparent and consistent with the existing system;
+- one implementation is apparent, consistent with the existing system, and supported by evidence for the behaviour it changes or promises to preserve;
 - the affected surface is known, and Foundation found nothing that extends it;
 - the consequences of being wrong would be cheap to detect and reverse.
 
@@ -54,8 +56,8 @@ Goal: enough evidence to decide. Not a survey.
 1. Find how the existing system already handles this class of problem. Follow that precedent unless there is a reason not to.
 2. Compare alternatives only while more than one approach remains plausible. Do not generate alternatives to fill a count.
 3. For each, establish what it costs: what it forces elsewhere, what it forecloses, how it fails.
-4. Verify the facts the decision rests on. Read the dependency's source or its official documentation rather than relying on a remembered API.
-5. Name the assumptions that could not be verified. Those are what Materialize will test.
+4. Verify the specific behaviour and restrictions the approach depends on, using source, schemas, or official documentation for the relevant version. Existing code is evidence of its current use, not proof that a proposed variation is supported.
+5. Separate established facts from remaining assumptions. Test decision-critical unknowns with a focused, reversible experiment before committing to the implementation; report a blocker if the necessary evidence is unavailable.
 
 For a defect, Research is diagnosis: reproduce the failure or establish why it cannot be reproduced; find the cause rather than the place the symptom surfaces; confirm the cause actually accounts for the observed behaviour. Do not implement a fix for an unconfirmed cause.
 
@@ -65,12 +67,12 @@ Stop when there is enough evidence to choose an approach. Involve the user only 
 
 Goal: a decision, explicitly made.
 
-1. Choose one approach and give the reason, in terms of the trade-offs Research found.
+1. After Research is complete, choose one approach and give the reason, in terms of the trade-offs Research found.
 2. State what is being accepted: the cost, the limitation, the thing deliberately not solved.
 3. Define the implementation: what changes where, in what order, and how it integrates with the existing code.
 4. Define what would show the decision was wrong.
 
-Make the decision and proceed, stating the choice and its trade-off as you go. Put it to the user first only when the decision commits them to something they have not agreed to — a new dependency, a change in existing behaviour, a data migration, an action that cannot be undone — or when the stated constraints cannot all be satisfied.
+Reconcile the decision with all evidence from Research before implementation. If any finding invalidates the approach or makes the constraints incompatible, do not implement it; explain the conflict and ask which constraint to relax. Ask first if the chosen approach requires an unapproved commitment, such as a dependency, migration, or behaviour change outside the request.
 
 Scope this to the task. A local change needs a short paragraph, not a system design.
 
@@ -80,7 +82,7 @@ Implement the chosen approach.
 
 - Follow the decision. If implementation requires changing the chosen approach, reconsider the decision explicitly instead of drifting into a different design.
 - Match the surrounding code's structure, naming, and idiom.
-- Build the simplest version that satisfies the requirements. Do not add abstraction for anticipated needs.
+- Build the simplest version that satisfies the requirements. Do not generalize beyond the actual inputs or add abstraction for anticipated needs.
 - Keep the implementation coherent. Do not stack workarounds on a premise that is failing.
 
 Return to Research when implementation shows that an assumption was invalid, a constraint was missed, or the chosen approach does not fit. On the direct path, this is how a task enters the RAM Cycle: say what changed.
@@ -93,13 +95,13 @@ Return to Foundation instead when the objective has to be restated — the probl
 
 Always performed. Depth matches risk and scope.
 
-1. Check the result against the problem and expected outcome from Foundation, not against the last thing implemented.
+1. Check the original outcome, explicit constraints, and applicable external contracts. Passing checks establish only what they actually cover; file consistency alone does not prove preserved behaviour.
 2. Exercise the behaviour that changed. Where the project has tests, add or extend one for new behaviour and for any defect fixed, so the failure cannot return unnoticed. Where the failure cannot be reproduced deterministically, test the mechanism that was changed and say what remains unverified. Where verification is manual, do it and report what was checked.
 3. Run the project's own checks for the affected areas: tests, type checking, linting, build. Find the real commands in the repository — package scripts, Makefile, CI configuration, tool configuration — instead of guessing. If they cannot be determined or cannot be run, say so plainly.
 4. Read the diff. Look for leftover debugging, dead code, unhandled failure paths, and behaviour changes the user did not ask for.
 5. Confirm that nothing depending on the previous behaviour was broken, starting with the callers and tests Foundation identified.
 
-Do not report success because the code looks correct, and do not let reading the diff stand in for running the change. If a check fails for reasons that predate the change, say so rather than absorbing it into the task. If the result could not be exercised at all, name what is unverified.
+Do not let reading the diff stand in for running the change. Distinguish introduced failures from pre-existing or environmental failures; do not absorb unrelated fixes into the task. Name any behaviour that remains unverified.
 
 If evaluation fails: an implementation defect returns to Materialize; an unsuitable approach or a newly discovered constraint returns to Research; a wrong understanding of the problem returns to Foundation.
 

@@ -16,15 +16,11 @@
   </picture>
 </p>
 
-AI agents can write code quickly, but getting them to understand the problem first is harder. FRAME is an engineering methodology that brings structure to that process.
+AI agents can write code quickly. FRAME helps engineers and agents decide what to build, understand why, and check that it solves the problem.
 
-Software engineering has always relied on more than writing code. Before implementation begins, engineers need to understand the problem, examine the existing system, explore viable approaches, evaluate trade-offs, and decide how the solution should be built.
+FRAME is a lightweight engineering methodology for moving from a problem to a validated implementation. Understand the existing system, investigate meaningful uncertainty, choose an approach, and reconsider it when new evidence changes the picture. The goal is to avoid premature implementation and repeated fixes built on the wrong assumption.
 
-Modern AI tools have dramatically reduced the effort required to generate code. While this has increased development speed, it has also made it easier to begin implementation before the underlying engineering decisions are clear. The result may be unnecessary complexity, inconsistent architecture, or a solution that addresses the immediate task without considering the broader system.
-
-FRAME provides a lightweight structure for moving from a problem to a validated implementation. It helps engineers and AI agents understand the current stage of the work, the questions that need to be answered, and the outcome required before moving forward.
-
-FRAME is independent of any specific AI model, development tool, programming language, or implementation framework. AI can help investigate the problem, propose alternatives, compare trade-offs, implement the selected approach, and evaluate the result.
+The methodology is independent of any AI model, development tool, programming language, or implementation framework. AI assists throughout the process; engineers remain responsible for the decisions.
 
 ## Core Philosophy
 
@@ -42,19 +38,57 @@ FRAME consists of five stages, with each letter representing a distinct part of 
 4. **Materialize** — Turn the strategy into a working implementation.
 5. **Evaluate** — Validate the result.
 
+Clear, low-risk tasks take the direct path: **Foundation → Materialize → Evaluate**. When meaningful uncertainty remains, Research, Architecture, and Materialize form the iterative **RAM Cycle**. A direct implementation can enter that cycle if it reveals unexpected complexity. Evaluate always happens; its depth matches the task.
+
+## Early results
+
+In two exploratory architecture and audit comparisons using Grok 4.6, runs with FRAME used **44% fewer reported tokens overall**. The outputs showed a smaller implementation scope and comparable audit findings.
+
+| Test | Without FRAME | With FRAME |
+| --- | ---: | ---: |
+| Action request | 933.8K | 497.1K |
+| Research request | 692.1K | 413.7K |
+
+These are early observations, not a formal benchmark. They are still the reason to try FRAME: on the action request it used about half the tokens, edited two files instead of three, and produced a stronger result.
+
 ## Cursor Plugin
 
-FRAME also includes a Cursor plugin. It uses an always-applied rule to identify relevant engineering work and a skill to carry out the workflow.
+Install FRAME in Cursor and use it on the next real change. The plugin detects implementation work, runs the methodology, and stays out of questions and read-only inspection.
 
 ### Installation
 
-FRAME is coming soon to the Cursor Marketplace.
+FRAME will be listed on [Cursor Directory](https://cursor.directory). Until that listing is live, install it locally:
+
+1. Clone this repository.
+2. Copy the project folder to Cursor's local plugins directory as `frame`. The copy must include `.cursor-plugin/plugin.json`.
+
+```bash
+git clone https://github.com/Zicrael/FRAME.git
+mkdir -p ~/.cursor/plugins/local
+cp -R FRAME ~/.cursor/plugins/local/frame
+```
+
+On Windows PowerShell:
+
+```powershell
+git clone https://github.com/Zicrael/FRAME.git
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cursor\plugins\local" | Out-Null
+Copy-Item -Recurse -Force FRAME "$env:USERPROFILE\.cursor\plugins\local\frame"
+```
+
+3. Restart Cursor, or run **Developer: Reload Window**.
+4. Open **Customize** and confirm the FRAME rule and the `/frame` skill are listed.
+
+Copy the files. Do not symlink the repo into `plugins/local`: Cursor currently ignores those links.
+
+When FRAME appears on Cursor Directory, search for **FRAME** at [cursor.directory](https://cursor.directory) and install it from **Customize**.
 
 ### Usage
 
-FRAME applies automatically to requests that implement or change code and systems. It remains inactive for informational questions and read-only work.
+Ask the agent to implement or change something. FRAME applies on its own.
 
-To invoke it explicitly, use `/frame`. Press `Option+Enter` on macOS or `Alt+Enter` on Windows to keep it active as a Custom Mode for the session.
+- Explicit: `/frame`
+- Keep it on for the session: run `/frame` with `Option+Enter` on macOS or `Alt+Enter` on Windows to use it as a Custom Mode.
 
 ## Documentation
 
