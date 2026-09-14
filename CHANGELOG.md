@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.0 — 2026-09-14
+
+- Plugin version is `1.1.0`.
+- Foundation identifies the behaviour and contracts that must survive the change, including those the request omits, and distinguishes intended behaviour from defects. Materialize preserves those contracts; internal representations may change where that simplifies the work in scope.
+- Follow-ups inherit Foundation. Diagnosis, investigation, and user involvement stay with the evidence: involve the user only for authority, conflicting requirements, or unavailable information; a failed approach is a reason to investigate further, not to stop.
+- Evaluate checks results independently where shared logic could hide the same defect, adds coverage or names the gap when preserved behaviour has no test, and requires fallbacks and incomplete checks to report only what they actually established.
+- RAM Cycle: a failed approach goes back to Research; repeated failure triggers reassessment, not automatic escalation; a rejected approach reopens when the reason it was rejected no longer holds.
+- README replaces the early token-usage table with Case studies. First comparison: a Sudoku generator fix against a control run on a real codebase.
+
 ## 1.0.0 — 2026-09-12
 
 - Plugin version is `1.0.0`.

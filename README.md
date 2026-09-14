@@ -40,16 +40,13 @@ FRAME consists of five stages, with each letter representing a distinct part of 
 
 Clear, low-risk tasks take the direct path: **Foundation → Materialize → Evaluate**. When meaningful uncertainty remains, Research, Architecture, and Materialize form the iterative **RAM Cycle**. A direct implementation can enter that cycle if it reveals unexpected complexity. Evaluate always happens; its depth matches the task.
 
-## Early results
+## Case studies
 
-Early testing with Grok 4.6 showed FRAME using around **40% fewer reported tokens**, with a smaller implementation scope and comparable audit findings. These are initial observations from two architecture and audit comparisons, not a typical or guaranteed saving.
+Each case study runs the same engineering task twice on a real codebase: once with FRAME and once without it. Both runs use the same model, prompt, and starting code.
 
-| Test | Without FRAME | With FRAME |
-| --- | ---: | ---: |
-| Action request | 933.8K | 497.1K |
-| Research request | 692.1K | 413.7K |
-
-On the action request, the FRAME run also edited two files instead of three and produced a stronger result.
+| Case study | Without FRAME | With FRAME | Difference | Review result |
+| --- | ---: | ---: | ---: | --- |
+| [Sudoku generator](docs/case-studies/sudoku-generator.md) | 4.5M tokens | 3.5M tokens | 22% fewer | FRAME preferred for largely retaining rotational symmetry |
 
 ## Cursor Plugin
 
