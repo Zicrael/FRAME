@@ -62,7 +62,7 @@ FRAME is markdown only. It does not open network connections, collect telemetry,
 
 ### Installation
 
-#### Full plugin — recommended
+#### Full plugin (recommended)
 
 Install FRAME as a local Cursor Plugin.
 
@@ -82,7 +82,7 @@ git clone https://github.com/Zicrael/FRAME.git "$env:USERPROFILE\.cursor\plugins
 
 Restart Cursor or run **Developer: Reload Window**, then open **Customize → Plugins** and confirm that FRAME contains both the rule and the `frame` skill.
 
-> On Teams and Enterprise, local plugin imports can be disabled by an administrator.
+> For Teams and Enterprise, local plugin imports can be disabled by an administrator.
 
 #### If local plugins are disabled
 
