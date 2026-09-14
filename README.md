@@ -62,34 +62,46 @@ FRAME is markdown only. It does not open network connections, collect telemetry,
 
 ### Installation
 
-**Cursor Directory:**
+#### Full plugin — recommended
 
-Open [FRAME on Cursor Directory](https://cursor.directory/plugins/frame) and click **Add to Cursor** button.
+Install FRAME as a local Cursor Plugin.
 
-**Local install:**
-
-1. Clone this repository.
-2. Copy the project folder to Cursor's local plugins directory as `frame`. The copy must include `.cursor-plugin/plugin.json`.
+**macOS / Linux**
 
 ```bash
-git clone https://github.com/Zicrael/FRAME.git
 mkdir -p ~/.cursor/plugins/local
-cp -R FRAME ~/.cursor/plugins/local/frame
+git clone https://github.com/Zicrael/FRAME.git ~/.cursor/plugins/local/frame
 ```
 
-On Windows PowerShell:
+**Windows PowerShell**
 
 ```powershell
-git clone https://github.com/Zicrael/FRAME.git
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cursor\plugins\local" | Out-Null
-Copy-Item -Recurse -Force FRAME "$env:USERPROFILE\.cursor\plugins\local\frame"
+git clone https://github.com/Zicrael/FRAME.git "$env:USERPROFILE\.cursor\plugins\local\frame"
 ```
 
-3. Restart Cursor, or run **Developer: Reload Window**.
-4. Open **Customize** and confirm the FRAME rule and the `/frame` skill are listed.
+Restart Cursor or run **Developer: Reload Window**, then open **Customize → Plugins** and confirm that FRAME contains both the rule and the `frame` skill.
 
-Copy the files. Do not symlink the repo into `plugins/local`: Cursor currently ignores those links.
+> On Teams and Enterprise, local plugin imports can be disabled by an administrator.
 
+#### If local plugins are disabled
+
+Install FRAME directly into the project instead:
+
+```text
+rules/*.mdc       → .cursor/rules/
+skills/frame/     → .cursor/skills/frame/
+```
+
+Cursor automatically discovers project rules and skills from these directories. Commit them if you want FRAME to be shared with the repository, or add .cursor/ to .gitignore to keep the installation local.
+
+#### Cursor Directory
+
+FRAME is also listed on [Cursor Directory](https://cursor.directory/plugins/frame).
+
+Clicking **Add to Cursor** installs the FRAME Rule. Due to current Cursor Directory limitations, the `frame` Skill still needs to be copied separately into the project.
+
+This results in a project-local installation rather than the complete FRAME plugin, so installing the full plugin using one of the methods above is recommended when possible.
 ### Usage
 
 Ask the agent to implement or change something. With the rule set to Always, FRAME applies on its own.
