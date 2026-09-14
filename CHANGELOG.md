@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.1 — 2026-09-15
+
+- Plugin version is `1.1.1`.
+- FRAME is now also a Claude Code plugin.
+
 ## 1.1.0 — 2026-09-14
 
 - Plugin version is `1.1.0`.

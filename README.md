@@ -40,7 +40,9 @@ FRAME consists of five stages, with each letter representing a distinct part of 
 
 Clear, low-risk tasks take the direct path: **Foundation → Materialize → Evaluate**. When meaningful uncertainty remains, Research, Architecture, and Materialize form the iterative **RAM Cycle**. A direct implementation can enter that cycle if it reveals unexpected complexity. Evaluate always happens; its depth matches the task.
 
-## Case studies
+FRAME contains only instructions and plugin metadata. The plugin itself runs no scripts or hooks, collects no telemetry, and requires no additional credentials.
+
+## Case Studies
 
 Each case study runs the same engineering task twice on a real codebase: once with FRAME and once without it. Both runs use the same model, prompt, and starting code.
 
@@ -48,18 +50,33 @@ Each case study runs the same engineering task twice on a real codebase: once wi
 | --- | ---: | ---: | ---: | --- |
 | [Sudoku generator](docs/case-studies/sudoku-generator.md) | 4.5M tokens | 3.5M tokens | 22% fewer | FRAME preferred for largely retaining rotational symmetry |
 
-## Cursor Plugin
+## Installation
+
+Install FRAME as a plugin in Claude Code or Cursor.
+
+### Claude Code
+
+```text
+/plugin marketplace add Zicrael/FRAME
+/plugin install frame@frame
+```
+
+Run each command separately.
+
+In the Claude desktop app, open the **Code** tab and enter the same commands in the prompt box.
+
+Ask Claude to implement or change something. Claude can load FRAME automatically when the request matches the skill description. Explicit invocation is `/frame:frame`.
+
+### Cursor
 
 Install FRAME in Cursor and use it on the next real change. The plugin includes:
 
 - An **always-applied rule** that detects implementation, change, debug, and refactor work and loads the FRAME skill. It stays out of informational questions and read-only inspection. After install the rule is set to Always; you can switch it to Agent Decides or Manual in **Customize**.
 - The `/frame` skill, which runs the methodology.
 
-FRAME is markdown only. It does not open network connections, collect telemetry, or require API keys.
+Ask the agent to implement or change something. With the rule set to Always, FRAME applies on its own. Explicit: `/frame`. To keep it on for the session, run `/frame` with `Option+Enter` on macOS or `Alt+Enter` on Windows to use it as a Custom Mode.
 
-### Installation
-
-#### Full plugin (recommended)
+### Full plugin (recommended)
 
 Install FRAME as a local Cursor Plugin.
 
@@ -81,7 +98,7 @@ Restart Cursor or run **Developer: Reload Window**, then open **Customize → Pl
 
 > For Teams and Enterprise, local plugin imports can be disabled by an administrator.
 
-#### If local plugins are disabled
+### If local plugins are disabled
 
 Install FRAME directly into the project instead:
 
@@ -92,21 +109,13 @@ skills/frame/     → .cursor/skills/frame/
 
 Cursor automatically discovers project rules and skills from these directories. Commit them if you want FRAME to be shared with the repository, or add .cursor/ to .gitignore to keep the installation local.
 
-#### Cursor Directory
+### Cursor Directory
 
 FRAME is also listed on [Cursor Directory](https://cursor.directory/plugins/frame).
 
-Clicking **Add to Cursor** installs the FRAME Rule. Due to current Cursor Directory limitations, the `frame` Skill still needs to be copied separately into the project.
+Cursor Directory currently installs the FRAME rule only. For the complete plugin with the `frame` skill, use the local plugin installation above.
 
-This results in a project-local installation rather than the complete FRAME plugin, so installing the full plugin using one of the methods above is recommended when possible.
-### Usage
-
-Ask the agent to implement or change something. With the rule set to Always, FRAME applies on its own.
-
-- Explicit: `/frame`
-- Keep it on for the session: run `/frame` with `Option+Enter` on macOS or `Alt+Enter` on Windows to use it as a Custom Mode.
-
-### Support
+## Support
 
 Open a [GitHub Issue](https://github.com/Zicrael/FRAME/issues) for bugs, questions, or listing problems.
 
