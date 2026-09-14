@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "frame",
+  "description": "FRAME, a lightweight engineering methodology for moving from a problem to a validated implementation.",
+  "owner": {
+    "name": "Yaroslav Kikot",
+    "email": "13ccdd@gmail.com",
+    "url": "https://github.com/Zicrael"
+  },
+  "plugins": [
+    {
+      "name": "frame",
+      "source": "./",
+      "category": "developer-tools"
+    }
+  ]
+}
