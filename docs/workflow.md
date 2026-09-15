@@ -28,6 +28,12 @@ Foundation does not need to be repeated unless new information changes the probl
 
 Task size alone does not determine the path. A small change may still require the RAM Cycle when its impact or uncertainty is significant.
 
+## Stages and Participants
+
+The stages describe engineering responsibilities, not a division of labour. A single engineer or agent may carry all of them, and some may be shared — an investigation performed by someone else, or an evaluation performed by an independent reviewer — as long as the responsibilities themselves are met and one participant remains accountable for the task as a whole.
+
+Sharing responsibilities does not change the workflow. The rules FRAME is currently trialling for delegating research and validation to separate agents are described in [Adaptive delegation](experiments/adaptive-delegation.md) and are deliberately kept out of this document.
+
 ---
 
 ## Foundation (F)

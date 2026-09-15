@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- FRAME skill rewritten as a compact entry point. Foundation now also names the evidence that would demonstrate the requested outcome and the check most likely to expose a consequential regression, on the direct path as well as in the RAM Cycle.
+- Experimental adaptive delegation: one lead agent owns the task and may optionally delegate a bounded, decision-relevant question or add independent validation of a candidate change. Task size, file count, uncertainty alone, and confidence alone do not decide how many agents work on a task. Where delegation is unavailable, FRAME runs as a single agent and reports the verification actually performed.
+- New `frame-researcher` and `frame-validator` agents, discovered from `agents/` in Cursor and Claude Code. Helpers write no production code and do not delegate further.
+- New `skills/frame/references/delegation.md` holds the coordination policy: supported arrangements, the handoff, validating a stable candidate, and which FRAME stage a finding returns to.
+- RAM Cycle: iteration is tied to uncertainty that could change the implementation decision; user involvement is required for commitments beyond the authority already granted; a delegated return carries the failed assumption, the new evidence, and the rejection reasons that still apply; difficulty alone reopens nothing.
+- Documentation: the workflow notes that stages are engineering responsibilities that may be shared, and [Adaptive delegation](docs/experiments/adaptive-delegation.md) records the hypotheses, routing criteria, controls, and measurements for the experiment. No results measured yet.
+
 ## 1.1.1 — 2026-09-15
 
 - Plugin version is `1.1.1`.

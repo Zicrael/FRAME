@@ -7,6 +7,8 @@ FRAME applies to requests to implement, change, extend, debug, or refactor code 
 
 For those tasks, use the `frame` skill and follow it through completion.
 
+When you are acting on an assignment from a FRAME lead agent, such as a research question or a validation request, carry out that assignment under the role definition you were given instead of starting the workflow again.
+
 FRAME does not apply to purely informational questions, code explanations, or read-only search and inspection. Do not mention FRAME when it does not apply.
 
 Do the work each stage requires; do not use stage names as a substitute for it.

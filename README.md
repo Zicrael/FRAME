@@ -42,6 +42,17 @@ Clear, low-risk tasks take the direct path: **Foundation → Materialize → Eva
 
 FRAME contains only instructions and plugin metadata. The plugin itself runs no scripts or hooks, collects no telemetry, and requires no additional credentials.
 
+## Research and Validation Helpers
+
+FRAME runs as one agent by default. Where the host supports subagents, that agent can optionally call on two helpers:
+
+- a **researcher**, for a bounded question whose answer could change the implementation decision;
+- a **validator**, which assesses a candidate change against the original requirements and the behaviour that had to be preserved, without having written it.
+
+One lead agent always owns the task: it establishes Foundation, chooses the approach, writes the code, resolves reported findings, and reports the result. Helpers carry out the responsibility they were assigned, write no production code, and do not delegate further. Where subagents are unavailable or disabled, FRAME runs as a single agent and reports the verification it actually performed.
+
+Adaptive delegation is **experimental**. Its routing criteria, and the measurements intended to establish whether it is worth its cost, are described in [Adaptive delegation](docs/experiments/adaptive-delegation.md). Those measurements have not been carried out yet, so FRAME makes no claim that delegation improves quality, speed, or cost.
+
 ## Case Studies
 
 Each case study runs the same engineering task twice on a real codebase: once with FRAME and once without it. Both runs use the same model, prompt, and starting code.
@@ -73,6 +84,7 @@ Install FRAME in Cursor and use it on the next real change. The plugin includes:
 
 - An **always-applied rule** that detects implementation, change, debug, and refactor work and loads the FRAME skill. It stays out of informational questions and read-only inspection. After install the rule is set to Always; you can switch it to Agent Decides or Manual in **Customize**.
 - The `/frame` skill, which runs the methodology.
+- Two optional agents, `frame-researcher` and `frame-validator`, which the skill uses only when its routing criteria are met.
 
 Ask the agent to implement or change something. With the rule set to Always, FRAME applies on its own. Explicit: `/frame`. To keep it on for the session, run `/frame` with `Option+Enter` on macOS or `Alt+Enter` on Windows to use it as a Custom Mode.
 
@@ -94,7 +106,7 @@ New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cursor\plugins\loca
 git clone https://github.com/Zicrael/FRAME.git "$env:USERPROFILE\.cursor\plugins\local\frame"
 ```
 
-Restart Cursor or run **Developer: Reload Window**, then open **Customize → Plugins** and confirm that FRAME contains both the rule and the `frame` skill.
+Restart Cursor or run **Developer: Reload Window**, then open **Customize → Plugins** and confirm that FRAME contains the rule, the `frame` skill, and the two agents.
 
 > For Teams and Enterprise, local plugin imports can be disabled by an administrator.
 
@@ -105,9 +117,10 @@ Install FRAME directly into the project instead:
 ```text
 rules/*.mdc       → .cursor/rules/
 skills/frame/     → .cursor/skills/frame/
+agents/*.md       → .cursor/agents/
 ```
 
-Cursor automatically discovers project rules and skills from these directories. Commit them if you want FRAME to be shared with the repository, or add .cursor/ to .gitignore to keep the installation local.
+Cursor automatically discovers project rules, skills, and agents from these directories. Omit `agents/` to run FRAME as a single agent. Commit them if you want FRAME to be shared with the repository, or add .cursor/ to .gitignore to keep the installation local.
 
 ### Cursor Directory
 
@@ -123,4 +136,5 @@ Open a [GitHub Issue](https://github.com/Zicrael/FRAME/issues) for bugs, questio
 
 - [Principles](docs/principles.md)
 - [Workflow](docs/workflow.md)
+- [Adaptive delegation (experimental)](docs/experiments/adaptive-delegation.md)
 - [Changelog](CHANGELOG.md)
