@@ -69,7 +69,7 @@ Fix implementation defects in Materialize, reconsider unsuitable approaches in R
 
 One lead owns the task throughout: it maintains Foundation, selects the approach, writes the implementation, resolves reported findings, and reports completion. A delegated agent carries out the responsibility it was assigned; it does not restart FRAME.
 
-Start with one agent, then consider the two extensions separately. Delegate research when a bounded, decision-relevant question benefits from separate context, specialised investigation, or exploration genuinely separable from the implementation. Add independent validation when it addresses a verification risk whose consequences matter. Task size, file count, uncertainty alone, or confidence alone do not decide how many agents work on a task.
+Start with one agent, then consider the two extensions separately. Delegate research when a bounded, decision-relevant question benefits from separate context, specialised investigation, or exploration genuinely separable from the implementation; keep the investigation yourself when you can resolve the question directly for less expected work than delegating it. Add independent validation when a consequential behaviour remains weakly verified, or when verification rests on assumptions a separate assessment could meaningfully challenge. Task size, file count, uncertainty alone, or confidence alone do not decide how many agents work on a task, and an important task alone is not an assignment.
 
 Read [references/delegation.md](references/delegation.md) before the first delegation. Where delegation is unavailable or not permitted, continue as a single agent and report the verification actually performed.
 

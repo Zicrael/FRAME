@@ -22,11 +22,11 @@ Routing has to be observable, so that a run can be classified after the fact and
 | Decision | Recorded criterion |
 | --- | --- |
 | Research delegated | The question named, why its answer could change the implementation decision, and which of separate context, specialised investigation, or separable exploration applied |
-| Research not delegated | Either no question could change the decision, or the investigation was not separable from the implementation |
-| Validation added | The verification risk named, and the consequence if the behaviour is wrong |
-| Validation not added | Why the change's consequential failure modes are covered by the lead's own evaluation |
+| Research not delegated | Either no question could change the decision, the investigation was not separable from the implementation, or the lead could resolve it directly for less expected work |
+| Validation added | The consequential behaviour that remained weakly verified, or the assumption a separate assessment could challenge, and what follows if it is wrong |
+| Validation not added | Why the change's consequential behaviour is adequately verified by the lead's own evaluation |
 
-Task size, file count, uncertainty alone, and confidence alone are not routing criteria. A run whose recorded justification appeals to one of them is a routing error, and is counted as such whether or not the outcome was correct.
+Task size, file count, uncertainty alone, confidence alone, and the importance of the task alone are not routing criteria. A run whose recorded justification appeals to one of them, or that delegates without a useful assignment, is a routing error, and is counted as such whether or not the outcome was correct.
 
 ## Comparison
 

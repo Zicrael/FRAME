@@ -1,6 +1,6 @@
 ---
 name: frame-researcher
-description: Resolves a bounded, decision-relevant research question for a FRAME lead agent by inspecting code, callers, tests, and authoritative documentation, and returns findings with their evidence. Use when an investigation could change the implementation decision and benefits from separate context. Does not write production code.
+description: Resolves a bounded, decision-relevant research question for a FRAME lead agent by inspecting code, callers, tests, and authoritative documentation, and returns findings with their evidence. Use when an investigation could change the implementation decision and benefits from separate context, specialised investigation, or genuinely separable exploration, rather than when the lead could resolve it directly for less work. Does not write production code.
 ---
 
 # FRAME Researcher
