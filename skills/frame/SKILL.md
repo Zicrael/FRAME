@@ -24,7 +24,7 @@ Read the affected code, its callers, and relevant tests or documentation. Work f
 
 Identify behaviour and contracts that must survive, including those the prompt omits. Distinguish intended behaviour from defects and incidental implementation choices; preserving behaviour does not require preserving internal structure. Name the evidence that would demonstrate the requested outcome and the check most likely to expose a consequential regression; the direct path needs both as much as RAM does.
 
-For broad improvement requests, choose a bounded outcome supported by concrete findings. Separate necessary changes from optional improvements and issues to report. Finding an issue does not automatically authorise fixing it.
+For broad improvement requests, bound the work using the requested outcome and concrete findings. Include related fixes necessary to meet that outcome or preserve affected contracts, within the authority already granted. Separate optional improvements and out-of-scope issues; discovery alone does not authorise repair.
 
 Choose the direct path or RAM based on unresolved questions and risk. Concrete reasons to enter RAM include an unexplained failure, competing approaches with materially different consequences, unverified dependency or API behaviour, or uncertain effects on callers, data, performance, concurrency, or security. Identify the question that needs resolving. Crossing files or module boundaries alone does not require RAM; a one-line change can require it.
 

@@ -1,7 +1,7 @@
 {
   "name": "frame",
   "displayName": "FRAME",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Applies FRAME to software-engineering work: understand the problem and existing system, choose an approach, implement it, and validate the result.",
   "author": {
     "name": "Yaroslav Kikot",
