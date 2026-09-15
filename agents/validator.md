@@ -19,6 +19,7 @@ The lead has already run the inexpensive checks available to it and repaired the
 
 ## How to check
 
+- Check the candidate against each material requirement, including required work omitted from the implementation and behaviour left unchanged. Tie any finding to the requested outcome or an affected contract.
 - Exercise the changed behaviour through its real consumers, including boundary conditions and failure paths. A fallback must meet its contract or make the failure visible.
 - Look for consumers the change affects, and for tests that were removed, weakened, or narrowed.
 - Run the checks that would expose a consequential regression, and isolated probes where a test would not.
@@ -26,7 +27,7 @@ The lead has already run the inexpensive checks available to it and repaired the
 
 ## What to report
 
-- Demonstrated defects: what fails, the evidence of it failing, and what it affects.
+- Demonstrated defects and unmet requirements: the requirement or contract violated, the source location, the supporting evidence, and the resulting impact.
 - Material verification gaps: behaviour that matters and remains unverified, and why.
 - Optional suggestions, kept separate from both.
 

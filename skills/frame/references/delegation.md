@@ -36,10 +36,11 @@ When the lead changes the code afterwards, the findings and behaviour that chang
 
 ## Resolving findings
 
-Before completion, the lead resolves material researcher and validator findings against the original outcome and affected contracts. Supported defects that prevent satisfying them require repair and affected checks within the authority already granted; an initial plan or helper assignment does not exclude necessary work. Findings left unfixed need an evidence-based reason: unsupported, outside the requested scope, or blocked. A blocked required repair means the task remains incomplete.
+Before completion, the lead resolves material researcher and validator findings against the original outcome and affected contracts. Supported defects that prevent satisfying them require repair and affected checks within the authority already granted; an initial plan or helper assignment does not exclude necessary work. Defects left unfixed need an evidence-based reason: unsupported, outside the requested scope, or blocked. A blocked required repair means the task remains incomplete.
 
 A finding re-enters the workflow where its cause lies:
 
+- a material verification gap returns to Evaluate for the smallest practical check; missing evidence alone is not a demonstrated defect;
 - an implementation defect returns to Materialize;
 - an invalid assumption or an unsuitable approach returns to Research;
 - a misunderstood outcome or constraint returns to Foundation.
