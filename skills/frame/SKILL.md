@@ -17,12 +17,12 @@ Deliver what was asked for, at the depth that request needs.
 | --- | --- |
 | A change whose cause and approach are already clear | Understand it, implement it, verify it. No investigation is owed. |
 | A question, diagnosis, or comparison | Findings with their evidence, and a recommendation where the evidence supports one. No code is owed. |
-| A defect whose cause is not established | Establish the cause, then the implementation and its checks — whether or not the request asked for a diagnosis. |
+| A request to fix a defect whose cause is not established | Establish the cause, then the implementation and its checks. |
 | A broad improvement request | Enough investigation and implementation to reach the outcome it asks for. |
 
-Which row applies depends on what is actually established, not on how the request is phrased. "Fix this" does not imply deep research, and a serious-sounding task does not imply more process. Effort grows because a question is unresolved or a consequence is unverified.
+The requested deliverable decides what you are authorised to do; the evidence available decides how much investigation that takes. A request to explain a failure is satisfied by a supported explanation and does not authorise a fix. A request to fix one is not satisfied until the fix is implemented and verified, however little investigation the cause turned out to need. "Fix this" does not imply deep research, and a serious-sounding task does not imply more process: effort grows because a question is unresolved or a consequence is unverified.
 
-The plan you start with stays revisable. When evidence shows that reaching the requested outcome needs related work — a consumer the change breaks, a contract it violates, a defect the fix exposes — that work belongs to the task, within the authority the request already grants. Keep genuinely optional improvements separate from what completion requires.
+The plan you start with stays revisable. When evidence shows that reaching the requested outcome needs related work — a consumer the change breaks, a contract it violates, a defect the fix exposes — that work belongs to the task, within the authority the request already grants; a genuinely optional improvement does not.
 
 The requested outcome itself holds unless the user changes it. Correct your understanding and your solution as evidence arrives; never quietly weaken a requirement so that a candidate can pass.
 
@@ -53,7 +53,7 @@ Research produces usable evidence: what is established, where it can be seen, wh
 
 When an attempt fails, investigate the failure before replacing the approach; a fix aimed at a misdiagnosed cause looks like progress. Check whether the reason it failed also rules out the alternative you were about to adopt. When the same kind of failure returns, reassess the diagnosis rather than trying the next variation of the fix.
 
-Carry established evidence forward, and keep the reason each rejected alternative was rejected — a rejected approach comes back into scope when that reason no longer holds, and difficulty alone does not remove it. Before another attempt, name the question it would answer. When investigation stops producing evidence and the next step would be a variation with no question behind it, report what you established and what is blocking rather than continuing to vary.
+Carry established evidence forward, and keep the reason each rejected alternative was rejected — a rejected approach comes back into scope when that reason no longer holds, and difficulty alone does not remove it. Before another attempt, name the question it would answer; a variation with no question behind it is not investigation.
 
 ### A — Align
 
@@ -67,7 +67,7 @@ Involve the user when progress needs authority or information you do not have: a
 
 Implement the simplest solution that satisfies the established outcome and contracts, following the project's conventions. Cover the input domain the contract admits, not only the examples in the request. Include the related work the outcome requires; leave out unrelated cleanup and speculative capability.
 
-Preserve required behaviour while correcting the defects the task covers. Simplify internal structure where that helps. If implementation disproves an assumption or shows the approach is unsuitable, return to the investigation and the decision that rests on it instead of stacking workarounds.
+Preserve required behaviour while correcting the defects the task covers. Simplify internal structure where that helps. If implementation disproves an assumption or shows the approach unsuitable, return to the investigation rather than stacking workarounds.
 
 ### E — Evaluate
 
@@ -83,7 +83,7 @@ Where findings are the deliverable, Evaluate assesses the findings: whether they
 
 ## Participants
 
-Start with one accountable lead carrying all five responsibilities. It keeps the original request, owns the implementation decisions and the integration, and stays accountable for completion. Add a helper when it has a concrete contribution that justifies the handoff and the context it has to rebuild.
+Start with one accountable lead carrying all five responsibilities. It holds the requested outcome throughout, owns the implementation decisions and the integration, and answers for the result. Add a helper when it has a concrete contribution that justifies the handoff and the context it has to rebuild.
 
 The common arrangements:
 
@@ -93,11 +93,11 @@ The common arrangements:
 | FRAM lead, independent E | A separate assessment could expose consequential mistakes, omissions, or unsupported assumptions. |
 | FR researcher, AM lead, E validator | A substantial investigation benefits from its own context, and the implementation also benefits from independent assessment. |
 
-The letters show where the effort falls, not where accountability moves. The lead holds the requested outcome throughout and answers for the result: a researcher investigates assigned questions within it, and a validator assesses against it. The lead evaluates its own work in every arrangement — an independent validator adds a second assessment rather than replacing the lead's.
+The letters show where the effort falls, not where accountability moves: a researcher investigates assigned questions within the lead's outcome, and a validator assesses against it. The lead evaluates its own work in every arrangement — an independent validator adds a second assessment rather than replacing the lead's.
 
 Research and validation are separate choices, and either helper can be used without the other; a lead and a researcher, with the lead evaluating, is as valid as the rows above. Decide on uncertainty, consequences, the value of an independent check, and whether the work separates usefully. Task size and file count do not decide it. The arrangement can change as evidence develops, and choosing one should stay a quick judgment rather than becoming a project of its own.
 
-Research assignments go to `frame-researcher` and validation assignments to `frame-validator`, resolved as the host exposes them. A helper carries out the assignment it was given: it writes no production code, does not restart FRAME, and does not delegate further. Reuse the same helper for a related follow-up rather than starting another. Where the helper a responsibility calls for is unavailable, carry that responsibility yourself and report the verification you actually performed. Read [references/delegation.md](references/delegation.md) before the first handoff.
+Research assignments go to `frame-researcher` and validation assignments to `frame-validator`, resolved as the host exposes them, including any plugin namespacing. A helper carries out the assignment it was given: it writes no production code, does not restart FRAME, and does not delegate further. Reuse the same helper for a related follow-up rather than starting another. Where the helper a responsibility calls for is unavailable, carry that responsibility yourself and report the verification you actually performed. Read [references/delegation.md](references/delegation.md) before the first handoff.
 
 Delegation is experimental. Nothing has established yet that it improves quality or cost, so do not treat adding an agent as a mark of thoroughness.
 

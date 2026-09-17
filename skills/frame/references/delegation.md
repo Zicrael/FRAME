@@ -4,15 +4,15 @@ Experimental. FRAME runs as one agent unless a helper has a concrete contributio
 
 ## Who owns what
 
-**The lead** holds the original request. It decides the approach, writes the implementation, integrates the work, resolves findings, and reports completion. It is accountable for the task whether or not anyone helped. Having delegated the investigation does not make the recommendation binding: implementation experience or the source itself can contradict it, and the lead decides.
+The skill establishes that the lead holds the requested outcome and answers for the result. What delegation adds:
+
+**The lead** decides even where it did not investigate. Having delegated the question does not make the recommendation binding; implementation experience or the source itself can contradict it.
 
 **The researcher** investigates the questions it was assigned and returns verified findings, the locations that support them, the uncertainty that remains, and a recommendation where the evidence supports one. It flags discoveries that change the understanding of the task even when the assignment did not ask about them.
 
-**The validator** assesses the candidate against the original request and the contracts the change affects. It needs access to the underlying sources and the ability to run relevant checks. Its assessment covers incomplete delivery as well as regressions.
+**The validator** assesses the candidate against the original request and the contracts the work affects. It needs access to the underlying sources and the ability to run relevant checks. Its assessment covers incomplete delivery as well as regressions.
 
-The lead is the only agent that writes production code. Helpers read anything, run checks, and set up isolated experiments within the authority the lead already has. Use at most one researcher and one validator, reuse the same helper for a focused follow-up rather than starting another, and do not let a helper delegate further or restart the methodology.
-
-Research assignments go to `frame-researcher`, validation assignments to `frame-validator`; resolve each identifier as the host exposes it, including any plugin namespacing. Where the helper is unavailable, the lead carries out that responsibility itself.
+Helpers read anything, run checks, and set up isolated experiments within the authority the lead already has. Use at most one researcher and one validator alongside the lead.
 
 ## Handoff
 
@@ -40,12 +40,6 @@ A finding states what requirement or behaviour is affected and the evidence for 
 
 ## Resolving findings
 
-Findings return to the responsibility where their cause lies, following the correction table in the skill. Send back only the finding or question that needs resolving, with the facts already established and the reasons an approach was rejected; one finding does not restart every role.
-
-Before completion the lead accounts for every material finding against the original request and the contracts affected. Supported defects that prevent satisfying the request require repair and a recheck of the behaviour affected, within the authority already granted — an initial plan or a narrow helper assignment does not exclude necessary work. Listing an actionable required defect as a residual issue does not resolve it. Anything left unrepaired needs its reason stated, and a blocked required repair means the task is incomplete.
+A helper's findings are resolved the same way as the lead's own, through the correction table in the skill. Send back only the finding or question that needs resolving, with the facts already established and the reasons an approach was rejected; one finding does not restart every role. A supported defect that prevents satisfying the request is repaired within the authority already granted — a narrow helper assignment does not exclude necessary work any more than an initial plan does.
 
 The lead performs the recheck after its own repair, on the behaviour and findings that repair affects. Return to the validator when the repair changes enough that the earlier assessment no longer covers the candidate, or when the finding being repaired is one the lead's own evaluation had missed — a repair closed out only by the agent whose review missed the defect leaves the same blind spot in place. A recheck is not a second full assessment; it covers what the repair touched.
-
-## Stopping
-
-Stop when the request and the checks that matter are satisfied. Going further needs a concrete unresolved risk, a hypothesis worth testing, or a check that has not run. Where progress depends on information or authority no agent has, report the blocker rather than continuing to circle.
