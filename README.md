@@ -16,7 +16,7 @@
   </picture>
 </p>
 
-AI agents can write code quickly. FRAME helps engineers and agents turn that code into a result that meets the request, with evidence that it works.
+AI agents can write code quickly. FRAME helps engineers and agents turn engineering requests into results supported by evidence.
 
 FRAME is a lightweight engineering methodology that scales investigation, implementation, and validation to the task. Understand the requested outcome and the existing system, resolve uncertainty that could change the approach, and check the result against the requirements. One agent can carry the work; research or validation helpers join when their contribution justifies the additional effort. The goal is to reduce avoidable mistakes and repeated rework on the way to a verified result.
 

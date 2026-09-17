@@ -6,7 +6,7 @@
     <!-- FR: Foundation + Research -->
     <path fill="#EF3340" d="M0 0h84v24H27v23h50v23H27v42H0z"/>
     <path fill="#EF3340" fill-rule="evenodd" d="M101 0h53c29 0 46 14 46 37 0 17-9 29-25 35l30 40h-33l-25-35h-19v35h-27zm27 23v32h25c13 0 20-6 20-16s-7-16-20-16z"/>
-    <!-- AM: Architecture + Materialize -->
+    <!-- AM: Align + Materialize -->
     <path fill="#00A3E0" transform="translate(10 0)" fill-rule="evenodd" d="M249 0h29l45 112h-29l-8-23h-46l-8 23h-29zm14 25-16 43h32z"/>
     <path fill="#00A3E0" transform="translate(10 0)" d="M331 0h29l34 51 34-51h29v112h-27V40l-34 50h-5l-33-50v72h-27z"/>
     <!-- E: Evaluate / validator -->
