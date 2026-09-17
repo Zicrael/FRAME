@@ -59,11 +59,12 @@ This revision of the methodology, and adaptive delegation in particular, is **ex
 
 Each case study runs the same engineering task twice on a real codebase: once with FRAME and once without it. Both runs use the same model, prompt, and starting code.
 
-| Case study | Without FRAME | With FRAME | Difference | Review result |
-| --- | ---: | ---: | ---: | --- |
-| [Sudoku generator](docs/case-studies/sudoku-generator.md) | 4.5M tokens | 3.5M tokens | 22% fewer | FRAME preferred for largely retaining rotational symmetry |
+| Case study | FRAME version | Without FRAME | With FRAME | Review result |
+| --- | --- | ---: | ---: | --- |
+| [Sudoku generator](docs/case-studies/sudoku-generator.md) | v1.1 | 4.5M tokens | 3.5M tokens | FRAME preferred for largely retaining rotational symmetry |
+| [Racing game](docs/case-studies/racing-game.md) | v2.0 | 4M tokens | 5.6M tokens | FRAME preferred: in the reviewed short-height viewports essential gameplay stayed visible, pause did not toggle on key-repeat, and the player was drawn at the same scale as oncoming traffic |
 
-Read the token figures as a record of those two runs, not as a measured saving. Each case study covers one task on one codebase at the FRAME version it names, and predates the current revision. The FRAME run was also made after the instructions had been refined using findings from earlier attempts at the same task, while the control was the original unguided run — so the comparison is not like-for-like, and a single pair of runs does not establish that FRAME improves quality or reduces cost. The measurements that could establish it are planned in [Adaptive delegation](docs/experiments/adaptive-delegation.md) and have not been carried out.
+Read the token figures as a record of those two runs, not as a measured saving. Each case study covers one task on one codebase at the FRAME version it names. The Sudoku FRAME run was made after the instructions had been refined using findings from earlier attempts at the same task, while its control was the original unguided run — so that comparison is not like-for-like. A single pair of runs does not establish that FRAME improves quality or reduces cost. The measurements that could establish it are planned in [Adaptive delegation](docs/experiments/adaptive-delegation.md) and have not been carried out.
 
 ## Installation
 
