@@ -1,6 +1,6 @@
 # Delegation
 
-Experimental. FRAME runs as one agent unless a helper has a concrete contribution to make. Read this before the first handoff; it covers who owns what, what a handoff carries, and how a finding comes back.
+FRAME runs as one agent unless a helper has a concrete contribution to make. Read this before the first handoff; it covers who owns what, what a handoff carries, and how a finding comes back.
 
 ## Who owns what
 

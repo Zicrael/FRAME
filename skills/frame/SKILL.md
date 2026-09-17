@@ -99,7 +99,7 @@ Research and validation are separate choices, and either helper can be used with
 
 Research assignments go to `frame-researcher` and validation assignments to `frame-validator`, resolved as the host exposes them, including any plugin namespacing. A helper carries out the assignment it was given: it writes no production code, does not restart FRAME, and does not delegate further. Reuse the same helper for a related follow-up rather than starting another. Where the helper a responsibility calls for is unavailable, carry that responsibility yourself and report the verification you actually performed. Read [references/delegation.md](references/delegation.md) before the first handoff.
 
-Delegation is experimental. Nothing has established yet that it improves quality or cost, so do not treat adding an agent as a mark of thoroughness.
+Each additional agent has to justify the handoff and the context it rebuilds. More agents do not make the work better, so do not treat adding one as a mark of thoroughness.
 
 ## Correction
 

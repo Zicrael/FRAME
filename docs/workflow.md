@@ -6,7 +6,7 @@ FRAME moves an engineering request to a result its evidence supports. It does no
 
 FRAME names five responsibilities:
 
-1. **Foundation (F)** — Understand the requested outcome, the constraints, and the existing behaviour that bears on them.
+1. **Foundation (F)** — Understand the requested outcome, constraints, and relevant existing behaviour.
 2. **Research (R)** — Resolve the uncertainty that could change the solution.
 3. **Align (A)** — Assess the approach against the real implementation context and decide how to proceed.
 4. **Materialize (M)** — Carry out the authorised implementation.
@@ -42,7 +42,7 @@ FRAME does not need a separate named cycle to iterate. Any responsibility can be
 
 The five responsibilities describe engineering work, not a division of labour. One engineer or agent may carry all of them. Some may be shared — an investigation performed by someone else, an assessment performed by an independent reviewer — as long as the responsibilities are met and one participant remains accountable for the task as a whole.
 
-Whether to share them is a judgment about uncertainty, consequences, the value of an independent check, and whether the work separates usefully. The rules FRAME is currently trialling for delegating research and validation to separate agents live with the instructions themselves — in the FRAME skill and its delegation reference — and are deliberately kept out of this document. The plan for establishing whether that delegation is worth its cost is [Adaptive delegation](experiments/adaptive-delegation.md).
+Whether to share them is a judgment about uncertainty, consequences, the value of an independent check, and whether the work separates usefully. That judgment is deliberately kept out of this document: [Delegation](delegation.md) covers the arrangements FRAME supports, how to choose one, and how a helper's findings come back, and the operational instructions agents follow during a handoff are in [`skills/frame/references/delegation.md`](../skills/frame/references/delegation.md).
 
 ---
 

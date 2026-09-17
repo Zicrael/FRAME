@@ -34,7 +34,7 @@ FRAME guides engineering judgment. The requested outcome determines the work; un
 
 FRAME names five engineering responsibilities:
 
-1. **Foundation** — Understand the requested outcome, the constraints, and the existing behaviour that bears on them.
+1. **Foundation** — Understand the requested outcome, constraints, and relevant existing behaviour.
 2. **Research** — Resolve the uncertainty that could change the solution.
 3. **Align** — Assess the approach against the real implementation context and decide how to proceed.
 4. **Materialize** — Carry out the authorised implementation.
@@ -53,11 +53,11 @@ FRAME starts with one accountable lead carrying all five responsibilities. Where
 
 The two are independent choices: delegating the investigation does not commit the lead to delegating the assessment. The lead keeps the original request, decides the approach, writes the code, resolves reported findings, and remains accountable for completion. Helpers carry out the responsibility they were assigned, write no production code, and do not delegate further. Where subagents are unavailable or disabled, FRAME runs as a single agent and reports the verification it actually performed.
 
-This revision of the methodology, and adaptive delegation in particular, is **experimental**. The hypotheses, the routing decisions each run records, and the measurements intended to establish whether any of it is worth its cost are described in [Adaptive delegation](docs/experiments/adaptive-delegation.md). Those measurements have not been carried out yet, so FRAME makes no claim that the current instructions, or delegation, improve quality, speed, or cost.
+Adaptive delegation is a supported capability: one agent is the default, the arrangement is chosen per task, and no task requires a helper. FRAME makes no claim that delegation improves quality, speed, or cost. [Delegation](docs/delegation.md) describes the arrangements, how one is chosen, and how a helper's findings return to the lead.
 
 ## Case Studies
 
-These case studies compare FRAME with unguided implementations on real codebases, documenting outcomes, token usage, and review findings. Each study describes its setup and limitations
+These case studies compare FRAME with unguided implementations on real codebases, documenting outcomes, token usage, and review findings. Each study describes its setup and limitations.
 
 | Case study | FRAME version | Without FRAME | With FRAME | Review result |
 | --- | --- | ---: | ---: | --- |
@@ -141,5 +141,5 @@ Open a [GitHub Issue](https://github.com/Zicrael/FRAME/issues) for bugs, questio
 
 - [Principles](docs/principles.md)
 - [Workflow](docs/workflow.md)
-- [Adaptive delegation (experimental)](docs/experiments/adaptive-delegation.md)
+- [Delegation](docs/delegation.md)
 - [Changelog](CHANGELOG.md)
