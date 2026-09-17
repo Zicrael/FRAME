@@ -1,17 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 360" role="img" aria-labelledby="title desc">
   <title id="title">FRAME</title>
-  <desc id="desc">The FRAME wordmark for dark backgrounds.</desc>
+  <desc id="desc">The FRAME wordmark for dark backgrounds. FR, AM, and E form three color-coded roles.</desc>
 
-  <g fill="#F2F5F8" transform="translate(141 68) scale(2)">
-    <!-- F -->
-    <path fill="#FE8D06" d="M0 0h84v24H27v23h50v23H27v42H0z"/>
-    <!-- R -->
-    <path fill-rule="evenodd" d="M101 0h53c29 0 46 14 46 37 0 17-9 29-25 35l30 40h-33l-25-35h-19v35h-27zm27 23v32h25c13 0 20-6 20-16s-7-16-20-16z"/>
-    <!-- A -->
-    <path transform="translate(10 0)" fill-rule="evenodd" d="M249 0h29l45 112h-29l-8-23h-46l-8 23h-29zm14 25-16 43h32z"/>
-    <!-- M -->
-    <path transform="translate(10 0)" d="M331 0h29l34 51 34-51h29v112h-27V40l-34 50h-5l-33-50v72h-27z"/>
-    <!-- E -->
-    <path d="M475 0h84v24h-57v20h50v23h-50v21h57v24h-84z"/>
+  <g transform="translate(141 68) scale(2)">
+    <!-- FR: Foundation + Research -->
+    <path fill="#EF3340" d="M0 0h84v24H27v23h50v23H27v42H0z"/>
+    <path fill="#EF3340" fill-rule="evenodd" d="M101 0h53c29 0 46 14 46 37 0 17-9 29-25 35l30 40h-33l-25-35h-19v35h-27zm27 23v32h25c13 0 20-6 20-16s-7-16-20-16z"/>
+    <!-- AM: Architecture + Materialize -->
+    <path fill="#00A3E0" transform="translate(10 0)" fill-rule="evenodd" d="M249 0h29l45 112h-29l-8-23h-46l-8 23h-29zm14 25-16 43h32z"/>
+    <path fill="#00A3E0" transform="translate(10 0)" d="M331 0h29l34 51 34-51h29v112h-27V40l-34 50h-5l-33-50v72h-27z"/>
+    <!-- E: Evaluate / validator -->
+    <path fill="#F2F5F8" d="M475 0h84v24h-57v20h50v23h-50v21h57v24h-84z"/>
   </g>
 </svg>

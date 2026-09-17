@@ -12,11 +12,11 @@ Every implementation should begin with an understanding of the requested outcome
 
 ---
 
-## AI Assists, Engineers Decide
+## Autonomy with Accountability
 
 *Keep decisions explicit.*
 
-AI can help investigate problems, propose alternatives, compare trade-offs, implement solutions, and evaluate results. It should support engineering judgment rather than replace it. The reasoning behind consequential decisions should remain explicit and understandable, so that an engineer can assess a decision instead of being asked to approve each step of the work. Ordinary engineering choices are resolved within the authority the request grants; missing authority, contradictory requirements, and unavailable information belong to the engineer.
+AI can investigate, choose an approach, implement, and validate within the authority granted by the task. Routine engineering decisions should not require step-by-step approval. Consequential choices should be supported by evidence, with reasoning and trade-offs clear enough for an engineer to assess and challenge them. Engineers retain control over goals, constraints, and acceptable trade-offs. Involve them when progress requires additional authority, resolution of conflicting requirements, or consequential information that cannot be obtained independently.
 
 ---
 

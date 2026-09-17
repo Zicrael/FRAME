@@ -16,11 +16,11 @@
   </picture>
 </p>
 
-AI agents can write code quickly. FRAME helps engineers and agents decide what to build, understand why, and check that it solves the problem.
+AI agents can write code quickly. FRAME helps engineers and agents turn that code into a result that meets the request, with evidence that it works.
 
-FRAME is a lightweight engineering methodology for moving from a request to a result its evidence supports. Understand the outcome being asked for and the system it touches, resolve the uncertainty that could change the solution, and verify what was delivered against what was asked. The goal is to avoid premature implementation and repeated fixes built on the wrong assumption.
+FRAME is a lightweight engineering methodology that scales investigation, implementation, and validation to the task. Understand the requested outcome and the existing system, resolve uncertainty that could change the approach, and check the result against the requirements. One agent can carry the work; research or validation helpers join when their contribution justifies the additional effort. The goal is to reduce avoidable mistakes and repeated rework on the way to a verified result.
 
-The methodology is independent of any AI model, development tool, programming language, or implementation framework. AI assists throughout the process; engineers remain responsible for the decisions.
+FRAME is independent of any AI model, development tool, programming language, or implementation framework. Agents make engineering decisions within the authority granted by the task. Engineers retain control over goals, constraints, and acceptable trade-offs.
 
 ## Core Philosophy
 
@@ -57,14 +57,14 @@ This revision of the methodology, and adaptive delegation in particular, is **ex
 
 ## Case Studies
 
-Each case study runs the same engineering task twice on a real codebase: once with FRAME and once without it. Both runs use the same model, prompt, and starting code.
+These case studies compare FRAME with unguided implementations on real codebases, documenting outcomes, token usage, and review findings. Each study describes its setup and limitations
 
 | Case study | FRAME version | Without FRAME | With FRAME | Review result |
 | --- | --- | ---: | ---: | --- |
-| [Sudoku generator](docs/case-studies/sudoku-generator.md) | v1.1 | 4.5M tokens | 3.5M tokens | FRAME preferred for largely retaining rotational symmetry |
-| [Racing game](docs/case-studies/racing-game.md) | v2.0 | 4M tokens | 5.6M tokens | FRAME preferred: in the reviewed short-height viewports essential gameplay stayed visible, pause did not toggle on key-repeat, and the player was drawn at the same scale as oncoming traffic |
+| [Sudoku generator](docs/case-studies/sudoku-generator.md) | v1.1 | 4.5M tokens | 3.5M tokens | FRAME preferred for better preservation of rotational symmetry |
+| [Racing game](docs/case-studies/racing-game.md) | v2.0 | 4M tokens | 5.6M tokens | FRAME preferred for usability, reliability, and visual consistency |
 
-Read the token figures as a record of those two runs, not as a measured saving. Each case study covers one task on one codebase at the FRAME version it names. The Sudoku FRAME run was made after the instructions had been refined using findings from earlier attempts at the same task, while its control was the original unguided run — so that comparison is not like-for-like. A single pair of runs does not establish that FRAME improves quality or reduces cost. The measurements that could establish it are planned in [Adaptive delegation](docs/experiments/adaptive-delegation.md) and have not been carried out.
+These are individual observations, not estimates of FRAME’s typical quality or cost. Comparisons should be read alongside the setup and limitations in each study.
 
 ## Installation
 

@@ -1,14 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
   <title id="title">FRAME mark</title>
-  <desc id="desc">The modular FRAME mark centered on a transparent square canvas.</desc>
-
+  <desc id="desc">An outlined modular F with a red top, a sky-blue lower stem, and a navy middle arm, on a transparent canvas.</desc>
   <g transform="translate(132.5 84.4) scale(1.3)" fill="none" stroke-width="9">
-    <g stroke="#05294A">
+    <g stroke="#EF3340">
       <rect x="4" y="4" width="56" height="56"/>
       <rect x="78" y="4" width="108" height="56"/>
+    </g>
+    <g stroke="#00A3E0">
       <rect x="4" y="78" width="56" height="108"/>
       <rect x="4" y="204" width="56" height="56"/>
     </g>
-    <rect x="78" y="104" width="100" height="56" stroke="#FE8D06"/>
+    <rect x="78" y="104" width="100" height="56" stroke="#05294A"/>
   </g>
 </svg>
