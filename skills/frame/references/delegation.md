@@ -1,54 +1,51 @@
 # Delegation
 
-Experimental. FRAME runs as a single agent unless there is a reason not to. Read this before the first delegation. It defines how a lead works with helpers so that the methodology stays the same when its responsibilities are shared.
+Experimental. FRAME runs as one agent unless a helper has a concrete contribution to make. Read this before the first handoff; it covers who owns what, what a handoff carries, and how a finding comes back.
 
-## Arrangements
+## Who owns what
 
-Four staffings are supported: the lead alone, lead and researcher, lead and validator, or lead with both. For this experiment use at most one researcher and one validator alongside the lead, and reuse the same helper for a focused follow-up rather than starting another one. Helpers do not delegate further.
+**The lead** holds the original request. It decides the approach, writes the implementation, integrates the work, resolves findings, and reports completion. It is accountable for the task whether or not anyone helped. Having delegated the investigation does not make the recommendation binding: implementation experience or the source itself can contradict it, and the lead decides.
 
-Research assignments go to `frame-researcher`, validation assignments to `frame-validator`. Resolve each identifier as the host exposes it, including any plugin namespacing. When the helper a responsibility calls for is unavailable, the lead carries out that responsibility itself.
+**The researcher** investigates the questions it was assigned and returns verified findings, the locations that support them, the uncertainty that remains, and a recommendation where the evidence supports one. It flags discoveries that change the understanding of the task even when the assignment did not ask about them.
 
-The lead is the only agent that writes production code. Helpers read anything, run checks, and set up isolated experiments within the authority the lead already has.
+**The validator** assesses the candidate against the original request and the contracts the change affects. It needs access to the underlying sources and the ability to run relevant checks. Its assessment covers incomplete delivery as well as regressions.
+
+The lead is the only agent that writes production code. Helpers read anything, run checks, and set up isolated experiments within the authority the lead already has. Use at most one researcher and one validator, reuse the same helper for a focused follow-up rather than starting another, and do not let a helper delegate further or restart the methodology.
+
+Research assignments go to `frame-researcher`, validation assignments to `frame-validator`; resolve each identifier as the host exposes it, including any plugin namespacing. Where the helper is unavailable, the lead carries out that responsibility itself.
 
 ## Handoff
 
-A handoff is short and specific. It states:
+A handoff is short and sufficient. It carries:
 
-- the objective assigned, its scope, and the condition under which the helper should stop;
-- the original requirements and the constraints that bear on them;
+- the request and constraints that bear on the assignment, and the point at which the helper should stop;
 - the source locations that matter, and the baseline or candidate under examination;
-- what has been established as fact, which decisions were consequential, and which questions remain open;
-- which checks have already run, what they actually produced, and which gaps remain.
+- what has been established as fact, kept separate from what is assumed;
+- the question or decision that remains open;
+- for validation, the candidate and the checks already run, including what they produced and which were blocked.
 
-Keep established evidence separate from assumption, and mark anything believed but unverified. Point the helper at the underlying sources — files, tests, commands, documentation — so that it can contradict a summary that turns out to be incomplete. Do not copy the conversation wholesale, and do not make each helper reload the whole methodology; the assignment carries what the role needs.
+Point the helper at the underlying sources — files, tests, commands, documentation — so it can contradict a summary that turns out to be incomplete. Do not pass the conversation wholesale, and do not make each helper reload the whole methodology; the assignment carries what the role needs. A helper's summary informs the lead's understanding of the request; it never replaces the request.
 
-When a handoff has to point at a FRAME reference, use the path of the file as installed alongside this skill. The project being worked on need not contain FRAME's own files.
+When a handoff has to reference a FRAME document, use its path as installed alongside this skill. The project being worked on need not contain FRAME's own files.
 
 ## Validation
 
-Validation assesses a stable candidate, and the two roles divide the effort rather than repeating it.
+Validation assesses a stable candidate, and the two roles divide the effort instead of repeating it.
 
-Before the handoff, the lead runs the inexpensive, relevant checks already available to it and repairs the straightforward failures its change introduced, so that what it hands over is a candidate worth assessing rather than known breakage. A check that was blocked is passed on as blocked; on its own that does not make the review pointless.
+Before the handoff the lead runs the inexpensive checks available to it and repairs the straightforward failures its change introduced, so what it hands over is worth assessing rather than known breakage. A check that was blocked is passed on as blocked; that alone does not make the assessment pointless.
 
-The validator chooses its own checks, concentrating on consequential risks and on the gaps rather than on ground the lead has already covered. It repeats an existing check when the evidence behind it is insufficient, when the candidate has changed since, or when running it independently would materially strengthen the assessment.
+The validator chooses its own checks, concentrating on consequential risk and on the gaps rather than on ground already covered. It repeats one of the lead's checks when the evidence behind it is insufficient, when the candidate has changed since, or when running it independently would materially strengthen the assessment.
 
-When the lead changes the code afterwards, the findings and behaviour that change affects have to be rechecked.
+A finding states what requirement or behaviour is affected and the evidence for it, and distinguishes a demonstrated defect from a material verification gap and from an optional suggestion. Finding nothing is a valid result; no minimum count is expected. An assessment that ended early keeps the checks that completed and marks the rest as unverified — it is not an overall pass.
 
 ## Resolving findings
 
-Before completion, the lead resolves material researcher and validator findings against the original outcome and affected contracts. Supported defects that prevent satisfying them require repair and affected checks within the authority already granted; an initial plan or helper assignment does not exclude necessary work. Defects left unfixed need an evidence-based reason: unsupported, outside the requested scope, or blocked. A blocked required repair means the task remains incomplete.
+Findings return to the responsibility where their cause lies, following the correction table in the skill. Send back only the finding or question that needs resolving, with the facts already established and the reasons an approach was rejected; one finding does not restart every role.
 
-A finding re-enters the workflow where its cause lies:
+Before completion the lead accounts for every material finding against the original request and the contracts affected. Supported defects that prevent satisfying the request require repair and a recheck of the behaviour affected, within the authority already granted — an initial plan or a narrow helper assignment does not exclude necessary work. Listing an actionable required defect as a residual issue does not resolve it. Anything left unrepaired needs its reason stated, and a blocked required repair means the task is incomplete.
 
-- a material verification gap returns to Evaluate for the smallest practical check; missing evidence alone is not a demonstrated defect;
-- an implementation defect returns to Materialize;
-- an invalid assumption or an unsuitable approach returns to Research;
-- a misunderstood outcome or constraint returns to Foundation.
-
-Carry the established facts and the reasons an approach was rejected into that transition, and send back only the question or finding that needs resolving. One finding does not restart every role.
+The lead performs the recheck after its own repair, on the behaviour and findings that repair affects. Return to the validator when the repair changes enough that the earlier assessment no longer covers the candidate, or when the finding being repaired is one the lead's own evaluation had missed — a repair closed out only by the agent whose review missed the defect leaves the same blind spot in place. A recheck is not a second full assessment; it covers what the repair touched.
 
 ## Stopping
 
-Stop when the task and the checks that matter are satisfied. Going further needs a concrete unresolved risk, a hypothesis worth testing, or a check that has not run.
-
-An assessment that ended early still carries weight. Preserve the checks that completed and the findings the evidence supports, and mark the unfinished checks and the behaviour they would have covered as unverified. An incomplete assessment is not an overall pass. A focused follow-up starts from that evidence instead of repeating work already done.
+Stop when the request and the checks that matter are satisfied. Going further needs a concrete unresolved risk, a hypothesis worth testing, or a check that has not run. Where progress depends on information or authority no agent has, report the blocker rather than continuing to circle.

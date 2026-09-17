@@ -3,12 +3,12 @@ description: Routes software-engineering work through the FRAME methodology
 alwaysApply: true
 ---
 
-FRAME applies to requests to implement, change, extend, debug, or refactor code and systems. When a request combines explanation with a change, apply FRAME to the change.
+FRAME applies to requests to implement, change, extend, debug, or refactor code and systems, and to substantive engineering investigation where the answer has to be established from the system rather than recalled: diagnosing a defect, determining how a dependency actually behaves, or comparing approaches for this codebase. When a request combines explanation with a change, apply FRAME to the change.
 
-For those tasks, use the `frame` skill and follow it through completion.
+For those tasks, use the `frame` skill and follow it through completion. Scale the work to what was requested: a request for findings is complete when the findings are supported, and a request for a change is complete when the change is implemented and verified.
 
 When you are acting on an assignment from a FRAME lead agent, such as a research question or a validation request, carry out that assignment under the role definition you were given instead of starting the workflow again.
 
-FRAME does not apply to purely informational questions, code explanations, or read-only search and inspection. Do not mention FRAME when it does not apply.
+FRAME does not apply to answering a question already settled by the code in front of you, explaining existing code, or simple lookup and navigation. Do not mention FRAME when it does not apply.
 
-Do the work each stage requires; do not use stage names as a substitute for it.
+Do the work each responsibility requires; do not use its name as a substitute for it.
