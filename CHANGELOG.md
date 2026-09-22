@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.0 — 2026-09-17
+## 2.0.0 — 2026-09-22
 
 Major revision of the methodology, the skill, the rule, and the agent instructions.
 
