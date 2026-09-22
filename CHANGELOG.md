@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.0.0 — 2026-09-22
+
+Major revision of the methodology, the skill, the rule, and the agent instructions.
+
+- Architecture becomes Align: assess the approach against the existing system and decide how to proceed.
+- FRAME’s five letters now describe responsibilities rather than fixed stages. Work and effort scale to the requested outcome, uncertainty, and verification needs.
+- Adaptive delegation supports a single accountable lead with optional research and validation helpers.
+- The separately named RAM Cycle is removed; evidence-driven iteration remains part of the workflow.
+- The skill, rule, and agent instructions are updated for investigation-only tasks, focused corrections, and validation against the original request, including omitted requirements.
+- Documentation and branding are refreshed, with a new [Delegation](docs/delegation.md) guide and [Racing game](docs/case-studies/racing-game.md) case study.
+
 ## 1.1.1 — 2026-09-15
 
 - Plugin version is `1.1.1`.
